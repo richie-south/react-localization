@@ -10,7 +10,7 @@ declare module 'react-localization' {
         /**
          * Can be used from ouside the class to force a particular language
          * indipendently from the interface one
-         * @param language 
+         * @param language
          */
         setLanguage(language: string): void;
 
@@ -40,16 +40,21 @@ declare module 'react-localization' {
 
         /**
          * Return a string with the passed key in a different language
-         * @param key 
-         * @param language 
+         * @param key
+         * @param language
          */
         getString(key: string, language?: string): string;
 
         /**
          * Replace the NamedLocalization object without reinstantiating the object
-         * @param props 
+         * @param props
          */
         setContent(props: any): void;
+
+        /**
+         * Return current locale object
+         */
+        getContent(): any
     }
 
     export type LocalizedStrings<T> = LocalizedStringsMethods & T;
