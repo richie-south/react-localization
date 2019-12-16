@@ -59,8 +59,19 @@ declare module 'react-localization' {
 
     export type LocalizedStrings<T> = LocalizedStringsMethods & T;
 
+    type GetInterfaceLanguageCallback = () => string;
+    type loadLanguageCallback = (countryCode: string) => void;
+
+    interface Options {
+        customLanguageInterface?: GetInterfaceLanguageCallback;
+        loadLanguage?: loadLanguageCallback;
+        logsEnabled?: boolean;
+        pseudo?: boolean;
+        pseudoMultipleLanguages?: boolean;
+    }
+
     interface LocalizedStringsFactory {
-        new <T>(props: GlobalStrings<T>): LocalizedStrings<T>;
+        new <T>(props: GlobalStrings<T>, options?: Options): LocalizedStrings<T>;
     }
 
     var LocalizedStrings: LocalizedStringsFactory;
