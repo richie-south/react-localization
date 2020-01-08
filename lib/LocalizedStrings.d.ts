@@ -12,7 +12,7 @@ declare module 'react-localization' {
          * indipendently from the interface one
          * @param language
          */
-        setLanguage(language: string): void;
+        setLanguage(language: string, loadLanguage?: boolean): void;
 
         /**
          *  The current language displayed (could differ from the interface language
